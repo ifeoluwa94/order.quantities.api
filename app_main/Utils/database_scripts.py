@@ -40,3 +40,6 @@ case_content_quantity INTEGER ,
 case_content_unit TEXT
 );
 """
+
+GET_ORDER_LIST = """
+"""

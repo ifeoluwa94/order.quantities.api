@@ -1,4 +1,4 @@
-from app import init_app
+from app_main import init_app
 import os
 
 app_factory = init_app()

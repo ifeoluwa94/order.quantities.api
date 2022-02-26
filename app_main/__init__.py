@@ -1,5 +1,5 @@
 from flask import Flask
-from app.Utils.database_initializer import CREATE_DATABASE_SCHEMA
+from app_main.Utils.database_scripts import CREATE_DATABASE_SCHEMA
 import sqlite3
 
 """Create sqlite database connection and make it globally available"""
@@ -12,6 +12,11 @@ def init_app():
     db.executescript(CREATE_DATABASE_SCHEMA)
 
     with app.app_context():
+        # Import Routes
+        from app_main.Routes import routes
+
+        # Register Blueprints
+        app.register_blueprint(routes.route_bp, url_prefix='/')
         return app
 
 
