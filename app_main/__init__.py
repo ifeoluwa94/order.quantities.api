@@ -18,6 +18,3 @@ def init_app():
         # Register Blueprints
         app.register_blueprint(routes.route_bp, url_prefix='/')
         return app
-
-
-init_app()
